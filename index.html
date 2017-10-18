@@ -1,0 +1,134 @@
+
+idoctype html>
+<head>
+	<meta charset = "utf-8">
+	<link href='normalize.css' rel="stylesheet">
+	<link href='https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css' rel='stylesheet' type='text/css'>
+	<style>
+		html { font-family: 'Spoqa Han Sans'; font-weight: 200;}
+		.section{height:600px;width:100%;position: relative}
+		header{height:400px; background: black;width:100%; transition: all 0.3s}
+		header #logo{width:300px;text-align: center;height:44px;line-height: 44px;font-size: 1.5em;font-weight: 700;position:relative;left:calc(50% - 100px);transition: all 0.3s;color:white}
+		header #menu{width:800px;height:100px;position:relative;left:calc(50% - 350px);top:80px;transition: all 0.3s}
+		header li{width:100px;height:100px;color:black;background: white;float:left;border-radius: 10px;text-align: center;line-height: 100px;color:black;font-size: 2em;margin-left: 20px;margin-right:20px;}
+		h1{color:white;font-size: 3em;text-align: center;padding-top:280px; line-height: 1.2;padding-left: 100px;padding-right: 100px;letter-spacing: -1px;}
+		#sectionA{ background: blue; transition: all 1s; }
+		#sectionB{ background: orange; transition: all 1s; }
+		#sectionC{ background: url('./buspic.jpg');background-size:100% auto;background-position: 0px -120px; }
+		#sectionD{ background: green; transition: all 1s; }
+		#sectionE{ background: purple; transition: all 1s; }
+
+		#titleA{transition: all 1s;}
+		#titleB{transition: all 1s;}
+		#titleC{transition: all 1s;}
+		#titleD{transition: all 1s;}
+		#titleE{transition: all 1s;}
+
+	</style>
+</head>
+<body>
+<header id="header">
+	<div id="logo">나의 하루기분을 느껴봐라</div>
+	<div id="menu">
+		<ul>
+			<li id="menuA">^.^</li>
+			<li id="menuB">-_-</li>
+			<li id="menuC">>.<</li>
+			<li id="menuD">-_#</li>
+			<li id="menuE">>_<</li>
+		</ul>
+	</div>
+</header>
+<div class="section" id="sectionA">
+	<h1 id="titleA">아침에 일어나면 밤을 새지 않고 잤다는 것에 기분 좋음.</h1>
+</div>
+<div class="section" id="sectionB">
+	<h1 id="titleB">학교가는 버스는 언제오는 것인가...</h1>
+</div>
+<div class="section" id="sectionC">
+	<h1 id="titleC"></h1>
+</div>
+<div class="section" id="sectionD">
+	<h1 id="titleD">집에 갈때가 되면 피곤 와장창!!!</h1>
+</div>
+<div class="section" id="sectionE">
+	<h1 id="titleE">오늘도 겁나 열심히 공부했구나!!!.</h1>
+</div>
+<div class="section">
+	<h1 style="color:black">이렇게 하루가 끝나가네요!ㅋ</h1>
+</div>
+<script>
+	window.onscroll = function(){
+		console.log(document.body.scrollTop);
+		var scrollH = document.body.scrollTop;
+		if(scrollH > 50){
+			header.style.height = "44px";
+			header.style.position = "fixed";
+			header.style.top = "0px";
+			header.style.zIndex = "9999";
+			menu.style.left = "400px";
+			menu.style.top = "-80px";
+			logo.style.left = "0px";
+			sectionA.style.marginTop = "44px";
+		}else{
+			header.style.height = "300px";
+			header.style.position = "relative";
+			header.style.top = "0px";
+			logo.style.left = "calc(50% - 100px)";
+			menu.style.left = "calc(50% - 350px)";
+			menu.style.top = "80px";
+			sectionA.style.marginTop = "0px";
+
+		}
+
+		if(scrollH > 280){
+			titleA.style.paddingTop = "450px";
+			menuA.style.background = "yellow";
+		}else{
+			titleA.style.paddingTop = "280px";
+			menuA.style.background = "white";
+		}
+
+		if(scrollH > 680){
+			titleB.style.paddingTop = "500px";
+			titleB.style.transform = "rotateY(320deg)";
+			menuB.style.background = "orange";
+		}else{
+			titleB.style.paddingTop = "280px";
+			titleB.style.transform = "rotateY(0deg)";
+			menuB.style.background = "white";
+		}
+
+		if(scrollH > 1198){
+			sectionC.style.backgroundAttachment = "fixed";
+			menuC.style.background = "white";
+			menuC.innerHTML = "<img src='http://blogfiles.naver.net/MjAxNzEwMThfMjgw/MDAxNTA4Mjk4NTM4MTI5.zc8s6bueLxePb9EADYNulkPPYwOJi9Kr2EyjuSqTKKMg.p46OouW8Ddnlx6GYH_yse_nxpWJ1SGXkHPa15CjPpXAg.GIF.snqotm/bus2.gif'>";
+		}else{
+			sectionC.style.backgroundAttachment = "scroll";
+			menuC.style.background = "white";
+			menuC.innerHTML = ">,<";
+		}
+
+		if(scrollH > 1816){
+			sectionD.style.background = "orange";
+			titleD.style.color = "black";
+			menuD.style.background = "red";
+		}else{
+			sectionD.style.background = "green";
+			titleD.style.color = "white";
+			menuD.style.background = "white";
+		}
+
+		if(scrollH > 2400){
+			titleE.style.fontSize = "3em";
+			titleE.style.fontWeight = "700";
+			menuE.style.background = "pink";
+		}else{
+			titleE.style.fontSize = "1.5em";
+			titleE.style.fontWeight = "200";
+			menuE.style.background = "white";
+		}
+
+	}
+</script>
+</body>
